@@ -1,38 +1,215 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   text-align: center;
+  background-color: #ffebcd;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.italic {
+  font-style: italic;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* User Card Styling */
+.usercard {
+  padding-top: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.profilelinks {
+  margin: auto;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 14px;
+  width: 50vw;
+
+  min-width: 300px;
+  border: 2px solid black;
+  border-radius: 14px;
+  transition: 0.2s all ease-in-out;
+}
+
+.profilelinks:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 2px 2px black;
+}
+
+/* Profile Page Styling */
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 12px 0px 12px;
+  min-width: 500px;
+}
+.mainhead {
+  width: 30vw;
+  text-align: right;
+}
+
+/* Styling Dropdown */
+#dropdown {
+  background-color: inherit;
+  border-radius: 7px;
+  padding: 6px;
+  transition: 0.2s all ease-in-out;
+  max-width: 200px;
+}
+
+#dropdown:hover {
+  transform: scale(1.02);
+  border: 2px solid black;
+}
+
+.backbtn,
+.backsymbol {
+  color: black;
+  text-decoration: none;
+  padding: 0px 6px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: inherit;
+}
+
+.backbtn:hover,
+.backsymbol:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 1px 1px black;
+}
+
+.backsymbol {
+  display: none;
+}
+
+.userprofile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 150px;
+}
+
+.userposts {
+  padding-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Post Card Styling */
+.postcard {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 4px 6px;
+  gap: 6px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 25vw;
+  min-height: 220px;
+  border: 2px solid black;
+  border-radius: 12px;
+  transition: 0.2s all ease-in-out;
+  background-color: inherit;
+}
+
+.postcard:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 2px 2px black;
+}
+
+.popupcontainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 0 8px;
+  border: 3px solid black;
+  background-color: #ffebcd;
+  border-radius: 12px;
+  z-index: 12;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 4px;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 2px 16px;
+  margin-bottom: 2px;
+  border: 1px solid black;
+  border-top-right-radius: 8px;
+}
+
+.close:hover {
   color: white;
+  background-color: #f42323;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styling Clock */
+.clock {
+  display: flex;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.display {
+  background-color: black;
+  color: cyan;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  padding: 4px 12px;
+  border-radius: 8px;
+  min-width: 112px;
+}
+
+/* Responsive Design using media queries */
+
+@media screen and (max-width: 1150px) {
+  .postcard {
+    min-height: 280px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 850px) {
+  .postcard {
+    width: 40vw;
+    min-height: 250px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .backbtn {
+    display: none;
+  }
+  .backsymbol {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 2px 6px;
+  }
+
+  .userprofile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .postcard {
+    width: 60vw;
   }
 }
