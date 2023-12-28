@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const fetchRegionTime = async (region) => {
+  // Fetching timezone from the api
   const response = await fetch(
     `https://worldtimeapi.org/api/timezone/${region}`
   );
